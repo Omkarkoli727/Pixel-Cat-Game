@@ -6,21 +6,21 @@ screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption("runner")
 clock = pygame.time.Clock()
 game_active=True
-font = pygame.font.Font("projects\pfont\GomePixel-DYJX1.otf",50)
+font = pygame.font.Font("pfont\GomePixel-DYJX1.otf",50)
 
-sky_surf = pygame.image.load("projects\sky2.png").convert_alpha()
-ground_surf = pygame.image.load("projects\ground-0002.png").convert_alpha()
+sky_surf = pygame.image.load("sky2.png").convert_alpha()
+ground_surf = pygame.image.load("ground-0002.png").convert_alpha()
 score_surf = font.render("My game",False,(64,64,64))
 score_rect = score_surf.get_rect(center=(400,50))
 
-box_surf = pygame.image.load("projects\catbox6.png").convert_alpha()
+box_surf = pygame.image.load("catbox6.png").convert_alpha()
 box_rect = box_surf.get_rect(midbottom=(600,300))
 
-player_surf = pygame.image.load("projects\cat2.png").convert_alpha()
+player_surf = pygame.image.load("cat2.png").convert_alpha()
 player_rect = player_surf.get_rect(midbottom=(100,355))
 player_gravity = 0
 
-game_over_surf = pygame.image.load("projects/Game_over_page3.png").convert_alpha()
+game_over_surf = pygame.image.load("Game_over_page3.png").convert_alpha()
 game_over_rect = game_over_surf.get_rect(center=(400, 200))
 gameover_text=font.render("Game Over",False,(64,64,64))
 gameover_text_rect=gameover_text.get_rect(center=(400,50))
@@ -42,7 +42,7 @@ while True:
             if event.type==pygame.KEYDOWN:
                   
                if event.key==pygame.K_SPACE and player_rect.bottom>=300:
-                   player_gravity=-30
+                   player_gravity=-20
         else:
             if event.type==pygame.KEYDOWN and event.key==pygame.K_SPACE:
                 game_active=True  
@@ -74,8 +74,8 @@ while True:
     
     #collision
 
-            if box_rect.colliderect(player_rect):
-              game_active=False
+            #if box_rect.colliderect(player_rect):
+              #game_active=False
     else:
         screen.blit(game_over_surf, game_over_rect)
         screen.blit(gameover_text,gameover_text_rect)
@@ -90,4 +90,5 @@ while True:
             
     pygame.display.update()
     clock.tick(60)
+
 
