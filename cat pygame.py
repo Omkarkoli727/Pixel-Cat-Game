@@ -6,7 +6,7 @@ screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption("Pixel Cat")
 clock = pygame.time.Clock()
 game_active=True
-font = pygame.font.Font("GomePixel-DYJX1.otf",50)
+font = pygame.font.Font("pfont\GomePixel-DYJX1.otf",50)
 
 sky_surf = pygame.image.load("sky2.png").convert_alpha()
 ground_surf = pygame.image.load("ground-0002.png").convert_alpha()
